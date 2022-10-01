@@ -38,19 +38,51 @@
     "typescript": "~4.5.5"
   },
   "eslintConfig": {
+    "ignorePatterns": ["**/*.config.js"],
+    "parserOptions": {
+      "project": "./tsconfig.json",
+      "ecmaVersion": 2020
+    },
+    "rules": {
+      "indent": "off",
+      "no-array-constructor": "off",
+      "func-call-spacing": "off",
+      "@typescript-eslint/indent": [
+        "warn",
+        2
+      ],
+      "@typescript-eslint/explicit-function-return-type": [
+        "error"
+      ],
+      "@typescript-eslint/space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "always",
+          "named": "always",
+          "asyncArrow": "always"
+        }
+      ],
+      "vue/html-indent": [
+        "error",
+        2,
+        {
+          "attribute": 1,
+          "baseIndent": 1,
+          "closeBracket": 0,
+          "alignAttributesVertically": true,
+          "ignores": []
+        }
+      ]
+    },
+    "extends": [
+      "@vue/typescript/recommended",
+      "plugin:vue/vue3-recommended",
+      "@vue/standard"
+    ],
     "root": true,
     "env": {
       "node": true
     },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "@vue/standard",
-      "@vue/typescript/recommended"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 2020
-    },
-    "rules": {},
     "overrides": [
       {
         "files": [
